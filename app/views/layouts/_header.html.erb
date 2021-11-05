@@ -1,0 +1,13 @@
+<header>
+  <p>
+    <% if user_signed_in? %>
+      <%= link_to t('views.common.books'), books_path %> |
+      <%= link_to t('views.common.users'), users_path %> |
+      <%= link_to t('views.common.edit_profile'), edit_user_registration_path %> |
+      <%= link_to t('views.common.logout'), destroy_user_session_path, method: :delete %>
+    <% else %>
+    <%= link_to t('views.common.signup'), new_user_registration_path %> |
+    <%= link_to t('views.common.login'), new_user_session_path %>
+    <% end %>    
+  </p>
+</header>
